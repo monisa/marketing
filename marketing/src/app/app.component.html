@@ -1,0 +1,31 @@
+﻿<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+    <div class="container-fluid">
+        <div class="row">            
+                <div class="col-md-7">
+                    <div class="row">
+                        <app-slider class="col-md-12"></app-slider>
+                    </div>
+                    <div class="row">                        
+                        <app-testimonial class="col-md-6"></app-testimonial>
+                        <app-blog class="col-md-5"></app-blog>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <alert></alert>
+                    <router-outlet></router-outlet>
+                </div>
+            
+            
+        </div>
+    </div>
+</div>
+

@@ -1,24 +1,36 @@
-﻿<h2 routerLink="/login" class="btn btn-link">Login</h2><h2 routerLink="/register" class="btn btn-link">Register</h2>
-
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+﻿<h2>Existing User</h2>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="existinguserform">
+        
     <div class="form-group">
-        <input type="text" formControlName="username" placeholder="Username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="username"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <mat-icon matSuffix>perm_identity</mat-icon>
+        </mat-form-field>       
         <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
     </div>
     <div class="form-group">
-        <input type="password" formControlName="password" placeholder="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <mat-form-field appearance="outline">
+            <mat-label>Key</mat-label>
+            <input matInput type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <mat-icon matSuffix>lock</mat-icon>
+        </mat-form-field>         
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.required">Key is required</div>
         </div>
     </div>
+    <div class="form-group col-md-12 nopaddinglr">
+        <input type="checkbox"><a class="col-md-6 nopaddinglr" routerLink="/password"> Catch My key!</a> 
+        <a class="col-md-6" routerLink="/recall"> Recall the key Again</a> 
+    </div>
     <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">Login</button>
+        <button [disabled]="loading" class="btn btn-primary col-md-12">Connect</button>
         <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-        
     </div>
-    <div class="form-group">
-            <button class="btn btn-primary">Catch My Password!</button>
+    <div class="form-group text-center">
+        <a routerLink="/register">Create a new account</a>
     </div>
+    
 </form>

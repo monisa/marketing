@@ -1,25 +1,12 @@
-<div class="container">
-  <div class="img-container"  *ngFor="let i of sliderArray; let select = index;"
-       [ngClass]="{'selected': select == selectedIndex}">
-    <img src="{{i.img}}" alt="{{i.alt}}" height="100" >
-  </div>
 
-  <!--</div>-->
-  <div [ngStyle]="{'transform': 'translateY('+ transform + '%' +')', 'transition': '.8s'}">
-    <div class="text-container">
-      <div class="page-text" *ngFor="let i of sliderArray;let select = index;" [ngClass]="{'selected': select == selectedIndex}">
-        <p>{{i.text}}</p>
-      </div>
-    </div>
-  </div>
+<div class="w3-content w3-display-container">
 
-</div>
-
-<div class="slider">
-  <div class="slide-button-parent-container"  *ngFor="let i of sliderArray; let x =index" (click)="selected(x)" (keypress)="keySelected(x)" >
-     <div class="select-box">
-      <div   class="slide-button" [ngClass]="{'slide-button-select': x == selectedIndex}" >
-      </div>
-     </div>
+<div class="w3-display-container mySlides" *ngFor="let j of arrayRange; let k = index" [ngClass]="active == k ? 'item active' : 'item'">
+  <img src={{j.url}} >
+  <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+      {{j.title}}
   </div>
 </div>
+</div>
+
+

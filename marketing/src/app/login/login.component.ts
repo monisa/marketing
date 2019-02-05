@@ -2,7 +2,7 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { AlertService, AuthenticationService } from '@app/_services';
 
 @Component({templateUrl: 'login.component.html'})

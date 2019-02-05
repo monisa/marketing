@@ -2,38 +2,45 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from '@angular/material';
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
-
 import { AppComponent }  from './app.component';
 import { routing }        from './app.routing';
-
-import { AlertComponent } from './_components';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
-import { SliderComponent } from './slider/slider.component';;
-import { TestimonialComponent } from './testimonial/testimonial.component'
-;
-import { BlogComponent } from './blog/blog.component'
+import { SliderComponent } from './slider/slider.component';
+import { TestimonialComponent } from './testimonial/testimonial.component';
+import { FbPostComponent } from './fb-post/fb-post.component';
+import { TwPostComponent } from './tw-post/tw-post.component';
+import { AlertModule } from 'ngx-bootstrap';
+import { RecaptchaModule } from 'ng-recaptcha';
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        routing
+        routing,
+        AlertModule.forRoot(),
+        BrowserAnimationsModule,
+        MatInputModule, 
+        MatButtonModule,
+        MatSelectModule,
+        MatIconModule,
+        RecaptchaModule.forRoot()
     ],
     declarations: [
         AppComponent,
-        AlertComponent,
         HomeComponent,
         LoginComponent,
         RegisterComponent,
         SliderComponent ,
-        TestimonialComponent ,
-        BlogComponent  ],
+        TestimonialComponent,
+        FbPostComponent,
+        TwPostComponent    ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

@@ -7,25 +7,32 @@
 </nav>
 
 <!-- main app container -->
-<div class="jumbotron">
-    <div class="container-fluid">
-        <div class="row">            
-                <div class="col-md-7">
-                    <div class="row">
-                        <app-slider class="col-md-12"></app-slider>
-                    </div>
-                    <div class="row">                        
-                        <app-testimonial class="col-md-6"></app-testimonial>
-                        <app-blog class="col-md-5"></app-blog>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <alert></alert>
+    <div class="container-flex">
+        <div class="row" *ngIf="!leftMenu">
+            <img src="http://solosoft.in/wp-content/uploads/2015/07/logo.png">
+        </div>
+        <div class="col-md-12" *ngIf="leftMenu">  
+                <div class="col-md-4 login-wrapper float-md-right">
                     <router-outlet></router-outlet>
+                </div>          
+                <div class="col-md-8 float-md-left nopaddinglr">
+                    <div class="col-md-12 nopaddinglr d-none d-sm-block">
+                        <app-slider></app-slider>
+                    </div>
+                    <div class="mainsection">  
+                        <div class="col-md-6 float-md-left float-sm-none nopaddinglr">
+                            <app-testimonial class="col-md-12 test-wrapper nopaddinglr"></app-testimonial>
+                        </div>                      
+                        <div class="col-md-6 float-md-left float-sm-none">
+                            <app-fb-post class="col-md-12 fb-wrapper"></app-fb-post>
+                        </div>
+                        
+                    </div>
                 </div>
+                
             
             
         </div>
-    </div>
+    
 </div>
 

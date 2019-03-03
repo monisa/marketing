@@ -1,0 +1,15 @@
+.mySlides {display:none;}
+.mySlides img{
+    height: 300px;
+    width: 100%;
+}
+.active{
+    display: block;
+}
+.w3-black{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    color: #FFF;
+}

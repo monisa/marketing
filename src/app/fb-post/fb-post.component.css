@@ -1,0 +1,16 @@
+.mySlides {display:none;}
+.active{
+    display: block;
+}
+.w3-black{
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    color: #FFF;
+}
+.socialtitle{
+    font-style: italic;
+    font-weight: bold;
+    padding-top:15px;
+}

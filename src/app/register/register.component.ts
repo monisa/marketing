@@ -65,7 +65,7 @@ export class RegisterComponent implements OnInit {
 
     public onOtpVerify(event, item) {
         console.log(item.controls.otp.value);
-        email.available((avail: boolean) => {
+        item.controls.username.available((avail: boolean) => {
             console.log("Email available? " + avail);
         });
       }

@@ -1,0 +1,15 @@
+.mainsection .test-wrapper,.mainsection .fb-wrapper,.mainsection .tw-wrapper {
+    margin: 5px 0px;
+    text-align: center;
+    padding: 10px;
+}
+.mainsection .fb-wrapper,.mainsection .tw-wrapper{
+    padding: 15px;
+    min-height: 100px;
+}
+app-testimonial{
+    min-height: 150px;
+}
+[class*=col-]{
+    display: inline-block;
+}

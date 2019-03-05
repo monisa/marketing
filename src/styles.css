@@ -1,0 +1,68 @@
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* You can add global styles to this file, and also import other style files */
+.form-control:focus{
+    box-shadow: none;
+}
+.login-wrapper h2{
+    color: #000000;
+    margin: 2rem 0;
+}
+.h2active{    
+    background: #f2f2f2;
+    border: #ccc;
+}
+.nopaddinglr{
+    padding-right: 0;
+    padding-left: 0;
+}
+.container-flex{
+    margin-top: 2px;
+}
+.form-group i.material-icons{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+    padding: 5px;
+
+}
+.form-group {
+    position: relative;
+}
+.existinguserform .form-group{
+    margin-top:1rem;
+    margin-bottom: 2rem;
+}
+.existinguserform .form-group input{
+    padding: 0;
+    height: auto;
+}
+.test_author{
+    font-style: italic
+}
+
+.blink p{
+    animation: blink 10s linear infinite;
+}
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+.existinguserform  mat-form-field{
+    width:100%;
+}
+
+.existinguserform .form-group input.otpfield{
+    padding: 5px;
+    position: relative;
+    top: 3px;
+    border-radius: 5px;
+    border-style: groove;
+}
+

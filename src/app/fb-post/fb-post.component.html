@@ -1,0 +1,12 @@
+<h5>Social Post</h5>
+
+<div class="w3-content" style="max-width:400px">
+    <div class="w3-display-container mySlides" *ngFor="let j of arrayRange; let k = index" [ngClass]="active == k ? 'item active' : 'item'">
+        <div>{{j.post}}</div>
+        <div class="socialtitle text-right">{{j.title}}</div>
+    </div>
+</div>
+
+
+        
+        

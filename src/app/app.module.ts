@@ -12,18 +12,21 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { RecallComponent } from './recall';
 import { SliderComponent } from './slider/slider.component';
 import { TestimonialComponent } from './testimonial/testimonial.component';
 import { FbPostComponent } from './fb-post/fb-post.component';
 import { TwPostComponent } from './tw-post/tw-post.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
+        HttpModule,
         routing,
         AlertModule.forRoot(),
         BrowserAnimationsModule,
@@ -41,7 +44,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
         SliderComponent ,
         TestimonialComponent,
         FbPostComponent,
-        TwPostComponent    ],
+        TwPostComponent ,
+        RecallComponent   ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

@@ -1,0 +1,23 @@
+
+<h2>Recall your key</h2>
+
+
+<form [formGroup]="recallForm" class="existinguserform" (ngSubmit)="onSubmit()" *ngIf="!otpverify">
+    
+    <div class="form-group">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <mat-icon matSuffix>perm_identity</mat-icon>
+        </mat-form-field>         
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary col-md-12" >Recall</button>
+        
+        <a routerLink="/login" class="btn btn-link text-center col-md-12">Existing User</a>
+    </div>
+</form>

@@ -58,10 +58,6 @@ a{
     width:100%;
 }
 
-.existinguserform .form-group input.otpfield{
-    padding: 5px;
-    position: relative;
-    top: 3px;
-    border-radius: 5px;
-    border-style: groove;
-}
+.otp-textbox .mat-form-field-infix{
+    border-top: none;
+} 

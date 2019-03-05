@@ -1,14 +1,19 @@
 ﻿
 <h2>New Account</h2>
 
-<form [formGroup]="registerVerifyForm" class="existinguserform" *ngIf="!otpverify">
+<form [formGroup]="registerVerifyForm" class="existinguserform" *ngIf="otpverify">
     <div class="form-group" >
         <p>Verification process. Please Enter your OTP to complete the channels registration </p>
-        <p>
-            <input type="text" formControlName="otp" class="col-md-8 nopaddinglr otpfield" [ngClass]="{ 'is-invalid': otpverify && f.otp.errors }" />
-            <button [disabled]="loading" class="btn btn-primary col-md-4 nopaddinglr">Resend OTP</button>
-        </p>        
-            <button [disabled]="loading" class="btn btn-primary col-md-12" (click)="onOtpVerify($event, registerVerifyForm)" >Verify</button>
+        <div class="otp-textbox">
+           <mat-form-field class="col-md-8" appearance="outline">
+             <input matInput type="text" formControlName="otp" class="form-control" [ngClass]="{ 'is-invalid': otpSubmit && otpForm.otp.errors }" />
+           </mat-form-field>
+           <div *ngIf="otpSubmit && otpForm.otp.errors" class="invalid-feedback col-md-8">
+                <div *ngIf="otpSubmit && otpForm.otp.errors">OTP is required</div>
+            </div> 
+           <button [disabled]="loading" class="btn btn-primary col-md-4 nopaddinglr">Resend OTP</button>
+        </div>        
+            <button [disabled]="loading" (click)="onOtpVerify()" class="btn btn-primary col-md-12" >Verify</button>
     </div>
 </form>
 <form [formGroup]="registerForm" class="existinguserform" (ngSubmit)="onSubmit()" *ngIf="!otpverify">
@@ -55,6 +60,8 @@
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary col-md-12">Sign Up</button>
         <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    </div>
+    <div class="form-group"> 
         <a routerLink="/login" class="btn btn-link text-center col-md-12">Existing User</a>
     </div>
 </form>

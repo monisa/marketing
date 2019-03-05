@@ -16,8 +16,10 @@ export class RegisterComponent implements OnInit {
     registerVerifyForm: FormGroup;
     loading = false;
     submitted = false;
+    otpSubmit = false;
     register = this.registerForm;
-    otpverify = false;
+    otpverify = true;
+    otpNumber = '';
 
     
 
@@ -63,16 +65,25 @@ export class RegisterComponent implements OnInit {
        
     }
 
-    public onOtpVerify(event, item) {
-        console.log(item.controls.otp.value);
-        item.controls.username.available((avail: boolean) => {
-            console.log("Email available? " + avail);
-        });
+    public onOtpVerify() {
+        
+        if (this.registerVerifyForm.invalid) {
+            return;
+        }
+        this.loading = true;
+        this.otpSubmit = true;
+        if(this.registerVerifyForm.value.otp === this.otpNumber){
+            this.loading = false;
+            this.alertService.success('Registration successful', true);
+            //this.router.navigate(['/home']);
+        }
+      
       }
    
 
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
+    get otpForm() { return this.registerVerifyForm.controls; }
 
     onSubmit() {
         this.submitted = true;
@@ -86,8 +97,10 @@ export class RegisterComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/login']);
+                    console.log('data',data);
+                    this.loading = false;
+                    this.otpverify = true;
+                    this.otpNumber = '9876';
                 },
                 error => {
                     this.alertService.error(error);

@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     submitted = false;
     otpSubmit = false;
     register = this.registerForm;
-    otpverify = true;
+    otpverify = false;
     otpNumber = '';
 
     
@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     }
 
     public onOtpVerify() {
-        
+
         if (this.registerVerifyForm.invalid) {
             return;
         }
@@ -77,8 +77,11 @@ export class RegisterComponent implements OnInit {
             this.alertService.success('Registration successful', true);
             //this.router.navigate(['/home']);
         }
-      
-      }
+    }
+
+    public resendOpt() {
+        
+    }
    
 
     // convenience getter for easy access to form fields

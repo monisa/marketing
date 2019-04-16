@@ -19,7 +19,8 @@ import { FbPostComponent } from './fb-post/fb-post.component';
 import { TwPostComponent } from './tw-post/tw-post.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { HttpModule } from '@angular/http';
+import { HttpModule } from '@angular/http';;
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 @NgModule({
     imports: [
@@ -45,7 +46,8 @@ import { HttpModule } from '@angular/http';
         TestimonialComponent,
         FbPostComponent,
         TwPostComponent ,
-        RecallComponent   ],
+        RecallComponent ,
+        DashboardComponent  ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

@@ -7,12 +7,12 @@ import { AuthGuard } from './_guards';
 import { RecallComponent } from './recall';
 
 const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: 'landing', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'recall', component: RecallComponent },
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: '/login' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

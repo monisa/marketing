@@ -66,3 +66,66 @@ a{
     border-style: groove;
 }
 
+app-campaign{
+    min-height: 250px;
+    display: inline-block;
+}
+app-campaign{
+  min-height: 250px;
+  display: inline-block;
+}
+ul.horizontal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  text-align: right;
+}
+
+.horizontal li {
+  display: inline-block;
+}
+
+.horizontal li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.horizontal li a:hover {
+  background-color: #111;
+}
+
+ul.vertical  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 230px;
+  background-color: #333;
+}
+
+.vertical li a {
+  display: block;
+  color:#fff;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color on hover */
+.vertical li a:hover {
+  background-color: #555;
+  color: white;
+}
+  
+.material-icons{
+  position: relative;
+  top: 7px;
+  padding: 5px;
+}
+.removematerialicon{
+  position: static;
+  padding: 0;
+}

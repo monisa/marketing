@@ -1,12 +1,34 @@
 <div class="dashboard_wrapper">
-  <div class="header">
-    <div class="logo"><img src="http://solosoft.in/wp-content/uploads/2015/07/logo.png" title="logo"/></div>
+  <div class="header row">
+    <div class="logo col-lg-4">
+      <img src="http://solosoft.in/wp-content/uploads/2015/07/logo.png" title="logo" />
+    </div>
+    <div class="top-menu-top col-lg-8">
+      <app-topmenu *ngIf="commonService.topMenu == 'top'"></app-topmenu>
+      <app-mainmenu *ngIf="commonService.mainMenu == 'top'"></app-mainmenu>
+      <!-- <app-headermenu *ngIf="commonService.headerMenu == 'top'"></app-headermenu> -->
+    </div>
   </div>
-  <div class="main-content">
-    
+  <div class="main-content-wrapper row">
+    <div class="left-content " [ngClass]="{'col-lg-3': (commonService.rightCount == 0) }">
+      <app-topmenu *ngIf="commonService.topMenu == 'left'"></app-topmenu>
+      <app-mainmenu *ngIf="commonService.mainMenu == 'left'"></app-mainmenu>
+      <!-- <app-headermenu *ngIf="commonService.headerMenu == 'left'"></app-headermenu> -->
+    </div>
+    <div class="center-content" [ngClass]="{'col-lg-12': (commonService.leftCount == 0 && commonService.rightCount == 0), 'col-lg-8': (commonService.leftCount > 0 && commonService.rightCount > 0), 'col-lg-9': (commonService.rightCount > 0 && commonService.leftCount == 0), 'col-lg-9': (commonService.leftCount > 0 && commonService.rightCount == 0) }">
+      <app-topmenu *ngIf="commonService.topMenu == 'center'"></app-topmenu>
+      <app-mainmenu *ngIf="commonService.mainMenu == 'center'"></app-mainmenu>
+      <!-- <app-headermenu *ngIf="commonService.headerMenu == 'center'"></app-headermenu> -->
+      <app-campaign></app-campaign>
+    </div>
+    <div class="right-content" [ngClass]="{'col-lg-3': (commonService.leftCount == 0) }">
+      <app-topmenu *ngIf="commonService.topMenu == 'right'"></app-topmenu>
+      <app-mainmenu *ngIf="commonService.mainMenu == 'right'"></app-mainmenu>
+      <!-- <app-headermenu *ngIf="commonService.headerMenu == 'right'"></app-headermenu> -->
+    </div>
   </div>
-  <div class="footer">
-    <p>CopyRight @ zolosoft IT & Research</p>
+  <div class="footer col-lg-12">
+    <p class="text-center">CopyRight @ zolosoft IT & Research</p>
   </div>
 
 </div>

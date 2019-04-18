@@ -1,0 +1,20 @@
+<ul
+  [ngClass]="{'horizontal': (commonService.mainMenu == 'top' || commonService.topMenu == 'center' ), 'vertical': (commonService.mainMenu == 'left' || commonService.mainMenu == 'right' ) }">
+  <li><a class="active" href="#home">
+      <i class="material-icons">
+        launch
+      </i>Campaign</a></li>
+  <li><a href="#news">
+      <i class="material-icons">
+        people
+      </i>Audience</a></li>
+  <li><a href="#contact"><i class="material-icons">
+        bar_chart
+      </i>Analysis</a></li>
+  <li><a href="#about"><i class="material-icons">
+      format_list_numbered
+      </i>Preference</a></li>
+  <li><a href="#about"><i class="material-icons">
+        record_voice_over
+      </i>Support</a></li>
+</ul>

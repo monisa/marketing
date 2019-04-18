@@ -19,9 +19,12 @@ import { FbPostComponent } from './fb-post/fb-post.component';
 import { TwPostComponent } from './tw-post/tw-post.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { HttpModule } from '@angular/http';;
-import { DashboardComponent } from './dashboard/dashboard.component'
-
+import { HttpModule } from '@angular/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TopmenuComponent } from './topmenu/topmenu.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { HeadermenuComponent } from './headermenu/headermenu.component';
+import { CampaignComponent } from './campaign/campaign.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -47,7 +50,11 @@ import { DashboardComponent } from './dashboard/dashboard.component'
         FbPostComponent,
         TwPostComponent ,
         RecallComponent ,
-        DashboardComponent  ],
+        DashboardComponent ,
+        TopmenuComponent ,
+        MainmenuComponent,
+        CampaignComponent,
+        HeadermenuComponent],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

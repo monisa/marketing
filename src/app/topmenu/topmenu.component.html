@@ -1,0 +1,23 @@
+<ul
+  [ngClass]="{'horizontal': (commonService.topMenu == 'top' || commonService.topMenu == 'center' ), 'vertical': (commonService.topMenu == 'left' || commonService.topMenu == 'right' ) }">
+  <li><a class="active" href="#home">
+      <i class="material-icons">message</i>Message
+    </a></li>
+  <li><a href="#news">
+      <i class="material-icons">
+        language
+      </i>
+      Language</a></li>
+  <li><a href="#contact"><i class="material-icons">notifications_active</i>Notification</a>
+  </li>
+  <li><a href="#about">
+      <i class="material-icons">
+        account_circle
+      </i>
+      Profile</a></li>
+  <li><a href="#about">
+      <i class="material-icons">
+        exit_to_app
+      </i>
+      Sign Out</a></li>
+</ul>
